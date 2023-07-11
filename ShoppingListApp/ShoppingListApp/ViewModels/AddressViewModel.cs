@@ -1,8 +1,8 @@
-﻿using System.Diagnostics.Metrics;
+﻿using ShoppingListApp.Models;
 
-namespace ShoppingListApp.Models
+namespace ShoppingListApp.ViewModels
 {
-    public class Address
+    public class AddressViewModel
     {
         public int Id { get; set; }
 
@@ -29,4 +29,3 @@ namespace ShoppingListApp.Models
         public List<Invoice>? Invoices { get; set; }
     }
 }
-

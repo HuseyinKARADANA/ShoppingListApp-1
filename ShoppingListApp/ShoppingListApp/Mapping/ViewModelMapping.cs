@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using ShoppingListApp.Models;
+using ShoppingListApp.ViewModels;
 
 namespace ShoppingListApp.Mapping
 {
@@ -7,6 +9,8 @@ namespace ShoppingListApp.Mapping
         public ViewModelMapping()
         {
             //CreateMap<User, UserViewModel>().ReverseMap();
+
+            CreateMap<Address, AddressViewModel>().ReverseMap();
         }
     }
 }

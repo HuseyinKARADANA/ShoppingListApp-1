@@ -1,0 +1,68 @@
+﻿
+
+<h1>Add Address Page</h1>
+
+@model AddressViewModel
+
+
+<form asp-controller="Dashboard" asp-action="AddAddress" method="post" enctype="multipart/form-data">
+
+    <div class="form-group mb-3 mt-3">
+        <label asp-for="AddressName">Address Name :</label>
+        <input class="form-control" asp-for="AddressName" />
+        <span class="text-danger" asp-validation-for="AddressName"></span> @*error message*@
+    </div>
+
+    <div class="form-group mb-3 mt-3">
+        <label asp-for="CountryName">Country Name :</label>
+        <input class="form-control" asp-for="CountryName" />
+        <span class="text-danger" asp-validation-for="CountryName"></span> @*error message*@
+    </div>
+
+    <div class="form-group mb-3 mt-3">
+        <label asp-for="CityName">City Name :</label>
+        <input class="form-control" asp-for="CityName" />
+        <span class="text-danger" asp-validation-for="CityName"></span> @*error message*@
+    </div>
+
+    <div class="form-group mb-3 mt-3">
+        <label asp-for="TownName">Town Name :</label>
+        <input class="form-control" asp-for="TownName" />
+        <span class="text-danger" asp-validation-for="TownName"></span> @*error message*@
+    </div>
+
+    <div class="form-group mb-3 mt-3">
+        <label asp-for="DistrictName">District Name :</label>
+        <input class="form-control" asp-for="DistrictName" />
+        <span class="text-danger" asp-validation-for="DistrictName"></span> @*error message*@
+    </div>
+
+    <div class="form-group mb-3 mt-3">
+        <label asp-for="PostCode">Post Code :</label>
+        <input class="form-control" asp-for="PostCode" />
+        <span class="text-danger" asp-validation-for="PostCode"></span> @*error message*@
+    </div>
+
+
+
+    <div class="form-floating mb-3 mt-3">
+        <textarea asp-for="AddressText" class="form-control" placeholder="Address Detail : " style="height: 100px"></textarea>
+        <label asp-for="AddressText">Address Detail :</label>
+        <span class="text-danger" asp-validation-for="AddressText"></span> @*error message*@
+    </div>
+
+
+
+
+
+    <button class="btn btn-primary" type="submit">Register</button>
+
+</form>
+
+
+@section Scripts{
+
+    @*client-side validation*@
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
