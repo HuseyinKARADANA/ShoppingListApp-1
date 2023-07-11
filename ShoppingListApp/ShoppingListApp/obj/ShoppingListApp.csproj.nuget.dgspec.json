@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\siyar\\source\\repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj": {}
+    "C:\\Users\\siyar\\OneDrive\\Belgeler\\GitHub\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\siyar\\source\\repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj": {
+    "C:\\Users\\siyar\\OneDrive\\Belgeler\\GitHub\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\siyar\\source\\repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
+        "projectUniqueName": "C:\\Users\\siyar\\OneDrive\\Belgeler\\GitHub\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
         "projectName": "ShoppingListApp",
-        "projectPath": "C:\\Users\\siyar\\source\\repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
+        "projectPath": "C:\\Users\\siyar\\OneDrive\\Belgeler\\GitHub\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
         "packagesPath": "C:\\Users\\siyar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\siyar\\source\\repos\\ShoppingListApp\\ShoppingListApp\\obj\\",
+        "outputPath": "C:\\Users\\siyar\\OneDrive\\Belgeler\\GitHub\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\siyar\\AppData\\Roaming\\NuGet\\NuGet.Config",

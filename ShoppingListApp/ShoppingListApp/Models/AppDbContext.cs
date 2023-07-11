@@ -15,19 +15,7 @@ namespace ShoppingListApp.Models
 
             
 
-            modelBuilder.Entity<Address>()
-                .HasOne(a => a.Country)
-                .WithMany(c => c.Addresses)
-                .HasForeignKey(a => a.CountryId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
-
             
-
-            modelBuilder.Entity<Address>()
-                .HasOne(a => a.District)
-                .WithMany(d => d.Addresses)
-                .HasForeignKey(a => a.DistrictId)
-                .OnDelete(DeleteBehavior.ClientSetNull);
 
             modelBuilder.Entity<FavoriteItemUser>()
                 .HasOne(f => f.User)
@@ -78,13 +66,7 @@ namespace ShoppingListApp.Models
 
         public DbSet<Address> Addresses { get; set; }
 
-        public DbSet<Country> Countries { get; set; }
 
-        public DbSet<City> Cities { get; set; }
-
-        public DbSet<Town> Towns { get; set; }
-
-        public DbSet<District> Districts { get; set; }
 
         public DbSet<Category> Categories { get; set; }
 

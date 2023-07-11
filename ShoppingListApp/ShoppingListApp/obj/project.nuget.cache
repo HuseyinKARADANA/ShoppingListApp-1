@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "viP//2IVF7T6+B9AO2FTlqBG1RpDcDhAMDvOV/w1cnhWIzC+hcTe/JhYgYULFIxHDmJrynyaBQeWdvvAneCbAQ==",
+  "dgSpecHash": "K9BVuJeDQFQj1ZCp8rHt5sWDl85wvLMcBzs9rqKH5GZWz77IfklFkw/xd3kYrsWozFy/Hjixo5jDMYjOnnmmxQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\siyar\\source\\repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
+  "projectFilePath": "C:\\Users\\siyar\\OneDrive\\Belgeler\\GitHub\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\siyar\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\siyar\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
