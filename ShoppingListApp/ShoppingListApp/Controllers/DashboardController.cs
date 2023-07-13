@@ -15,7 +15,7 @@ namespace ShoppingListApp.Controllers
         private readonly IMapper _mapper;
 
         
-
+        //Deneme
         public DashboardController(AppDbContext context, IMapper mapper)
         {
             _context = context;

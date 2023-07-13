@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\siyar\\OneDrive\\Belgeler\\GitHub\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj": {}
+    "C:\\Users\\dogal\\Source\\Repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\siyar\\OneDrive\\Belgeler\\GitHub\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj": {
+    "C:\\Users\\dogal\\Source\\Repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\siyar\\OneDrive\\Belgeler\\GitHub\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
+        "projectUniqueName": "C:\\Users\\dogal\\Source\\Repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
         "projectName": "ShoppingListApp",
-        "projectPath": "C:\\Users\\siyar\\OneDrive\\Belgeler\\GitHub\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
-        "packagesPath": "C:\\Users\\siyar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\siyar\\OneDrive\\Belgeler\\GitHub\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\obj\\",
+        "projectPath": "C:\\Users\\dogal\\Source\\Repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
+        "packagesPath": "C:\\Users\\dogal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dogal\\Source\\Repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\siyar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dogal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -79,6 +84,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.20, 6.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.20, 6.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -87,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
