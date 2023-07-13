@@ -1,0 +1,63 @@
+﻿<h1>Add Advert Page</h1>
+
+
+@model ItemDetailViewModel
+
+<form asp-controller="Dashboard" asp-action="AddAdvert" method="post" enctype="multipart/form-data">
+<h5>Category: </h5>
+<div class="form-group mb-3 mt-3">
+        <select id="categorySelect" class="form-select" asp-for="CategoryId" asp-items="@ViewBag.CategorySelectList">
+        <option value="">Select Category : </option>
+
+    </select>
+    <span class="text-danger" asp-validation-for="CategoryId"></span>
+</div>
+
+    <h5>Subcategory: </h5>
+    <div class="form-group mb-3 mt-3">
+        <select id="subcategorySelect" class="form-select" asp-for="SubCategoryId" disabled>
+            <option value="">Select Subcategory: </option>
+        </select>
+        <span class="text-danger" asp-validation-for="SubCategoryId"></span>
+    </div>
+
+    
+
+</form>
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            // Listen for changes in the selected category
+            $('#categorySelect').change(function () {
+                var selectedCategoryId = $(this).val(); // Get the selected CategoryId
+
+                // Clear and disable the subcategory dropdown
+                $('#subcategorySelect').empty().attr('disabled', 'disabled');
+
+                if (selectedCategoryId !== '') {
+                    // Make an AJAX request to retrieve subcategories based on the selected CategoryId
+                    $.ajax({
+                        url: '@Url.Action("GetSubcategories", "Dashboard")',
+                        type: 'GET',
+                        data: { categoryId: selectedCategoryId },
+                        success: function (data) {
+                            // Enable the subcategory dropdown and populate it with the retrieved subcategories
+                            $('#subcategorySelect').removeAttr('disabled').html(data);
+                        },
+                        error: function () {
+                            // Handle error if any
+                        }
+                    });
+                }
+            });
+        });
+        
+    </script>
+
+
+    @*client-side validation*@
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

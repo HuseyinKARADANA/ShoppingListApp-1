@@ -54,6 +54,54 @@ namespace ShoppingListApp.Models
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
 
+            modelBuilder.Entity<Category>(entity =>
+            {
+                entity.ToTable("Categories");
+                entity.Property(e => e.Id).HasColumnName("Id");
+                entity.Property(e => e.Name).HasColumnName("Name");
+
+                entity.HasData(
+                    new Category { Id = 1, Name = "Electronic" },
+                    new Category { Id = 2, Name = "Male" }
+
+                );
+            });
+
+            modelBuilder.Entity<SubCategory>(entity =>
+            {
+                entity.ToTable("SubCategories");
+                entity.Property(e => e.Id).HasColumnName("Id");
+                entity.Property(e => e.CategoryId).HasColumnName("CategoryId");
+                entity.Property(e => e.Name).HasColumnName("Name");
+
+                entity.HasData(
+                    new SubCategory { Id = 1, CategoryId = 1, Name = "Phone" },
+                    new SubCategory { Id = 2, CategoryId = 1, Name = "Computer & Tablet" },
+                    new SubCategory { Id = 3, CategoryId = 2, Name = "Clothes" },
+                    new SubCategory { Id = 4, CategoryId = 2, Name = "Shoes" }
+
+                );
+            });
+
+            modelBuilder.Entity<CategoryDetail>(entity =>
+            {
+                entity.ToTable("CategoryDetails");
+                entity.Property(e => e.Id).HasColumnName("Id");
+                entity.Property(e => e.CategoryId).HasColumnName("CategoryId");
+                entity.Property(e => e.SubCategoryId).HasColumnName("SubCategoryId");
+                entity.Property(e => e.Name).HasColumnName("Name");
+
+                entity.HasData(
+                    new CategoryDetail { Id = 1, CategoryId = 1, SubCategoryId = 1, Name = "SmartPhone" },
+                    new CategoryDetail { Id = 2, CategoryId = 1, SubCategoryId = 2, Name = "Laptop" },
+                    new CategoryDetail { Id = 3, CategoryId = 1, SubCategoryId = 2, Name = "Monitor" }
+
+
+
+                );
+            });
+
+
 
             // Other entity configurations
 
@@ -70,9 +118,16 @@ namespace ShoppingListApp.Models
 
         public DbSet<Category> Categories { get; set; }
 
+        public DbSet<SubCategory> SubCategories { get; set; }
+
+        public DbSet<CategoryDetail> CategoryDetails { get; set; }
+
+        public DbSet<ItemDetail> ItemDetails { get; set; }
+
+        public DbSet<SmartPhone> SmartPhones { get; set; }
+
         public DbSet<Item> Items { get; set; }
 
-        public DbSet<ItemCategory> ItemCategories { get; set; }
 
         public DbSet<FavoriteItemUser> FavoriteItemUsers { get; set; }
 
