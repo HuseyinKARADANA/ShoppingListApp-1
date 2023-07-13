@@ -7,7 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\css\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\register.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="DBContext" Version="1.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />

@@ -75,6 +75,9 @@
           }
         }
       },
+      "DBContext/1.0.0": {
+        "type": "package"
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -3827,6 +3830,18 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "DBContext/1.0.0": {
+      "sha512": "ic0PUGaLs6GP7yS0MyO1mXid39R0vn+NU95TRLbYqVVL4W20v3tFGUCXpFlSvHyIveBxElBK6E1LOKR8+lGaeg==",
+      "type": "package",
+      "path": "dbcontext/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "IBusiness.DAL.dll",
+        "dbcontext.1.0.0.nupkg.sha512",
+        "dbcontext.nuspec"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -10627,7 +10642,9 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "DBContext >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.6",
@@ -10636,23 +10653,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dogal\\.nuget\\packages\\": {},
+    "C:\\Users\\huseyinkaradana\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dogal\\Source\\Repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
+      "projectUniqueName": "C:\\Users\\huseyinkaradana\\Desktop\\ShoppingListApp-main\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
       "projectName": "ShoppingListApp",
-      "projectPath": "C:\\Users\\dogal\\Source\\Repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
-      "packagesPath": "C:\\Users\\dogal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dogal\\Source\\Repos\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp\\obj\\",
+      "projectPath": "C:\\Users\\huseyinkaradana\\Desktop\\ShoppingListApp-main\\ShoppingListApp\\ShoppingListApp\\ShoppingListApp.csproj",
+      "packagesPath": "C:\\Users\\huseyinkaradana\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\huseyinkaradana\\Desktop\\ShoppingListApp-main\\ShoppingListApp\\ShoppingListApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\dogal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\huseyinkaradana\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -10662,7 +10679,7 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -10681,9 +10698,17 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          },
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[12.0.1, )"
+          },
+          "DBContext": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -10719,24 +10744,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.20, 6.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.20, 6.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.20, 6.0.20]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.20, 6.0.20]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -10745,7 +10752,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

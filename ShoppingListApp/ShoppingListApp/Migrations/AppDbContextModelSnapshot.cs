@@ -30,37 +30,37 @@ namespace ShoppingListApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AddressName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("AddressText")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CityName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("CountryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("DistrictName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DistrictId")
+                        .HasColumnType("int");
 
                     b.Property<int>("PostCode")
                         .HasColumnType("int");
 
-                    b.Property<string>("TownName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("TownId")
+                        .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CityId");
+
+                    b.HasIndex("CountryId");
+
+                    b.HasIndex("DistrictId");
+
+                    b.HasIndex("TownId");
 
                     b.HasIndex("UserId");
 
@@ -71,83 +71,78 @@ namespace ShoppingListApp.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Name");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Electronic"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Male"
-                        });
+                    b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("ShoppingListApp.Models.CategoryDetail", b =>
+            modelBuilder.Entity("ShoppingListApp.Models.City", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int")
-                        .HasColumnName("CategoryId");
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Name");
-
-                    b.Property<int>("SubCategoryId")
-                        .HasColumnType("int")
-                        .HasColumnName("SubCategoryId");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("CountryId");
 
-                    b.ToTable("CategoryDetails", (string)null);
+                    b.ToTable("Cities");
+                });
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 1,
-                            Name = "SmartPhone",
-                            SubCategoryId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 1,
-                            Name = "Laptop",
-                            SubCategoryId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CategoryId = 1,
-                            Name = "Monitor",
-                            SubCategoryId = 2
-                        });
+            modelBuilder.Entity("ShoppingListApp.Models.Country", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Countries");
+                });
+
+            modelBuilder.Entity("ShoppingListApp.Models.District", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TownId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TownId");
+
+                    b.ToTable("Districts");
                 });
 
             modelBuilder.Entity("ShoppingListApp.Models.FavoriteItemUser", b =>
@@ -273,7 +268,7 @@ namespace ShoppingListApp.Migrations
                     b.ToTable("Items");
                 });
 
-            modelBuilder.Entity("ShoppingListApp.Models.ItemDetail", b =>
+            modelBuilder.Entity("ShoppingListApp.Models.ItemCategory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -281,21 +276,19 @@ namespace ShoppingListApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CategoryDetailId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int>("FeatureId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SubCategoryId")
+                    b.Property<int>("ItemId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ItemDetails");
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ItemId");
+
+                    b.ToTable("ItemCategories");
                 });
 
             modelBuilder.Entity("ShoppingListApp.Models.Order", b =>
@@ -415,7 +408,7 @@ namespace ShoppingListApp.Migrations
                     b.ToTable("PaymentTypes");
                 });
 
-            modelBuilder.Entity("ShoppingListApp.Models.SmartPhone", b =>
+            modelBuilder.Entity("ShoppingListApp.Models.Town", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -423,88 +416,18 @@ namespace ShoppingListApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("BatteryPower")
+                    b.Property<int>("CityId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Brand")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("FrontCameraResolution")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Memory")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RAMCapacity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RearCameraResolution")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("ScreenSize")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SmartPhones");
-                });
-
-            modelBuilder.Entity("ShoppingListApp.Models.SubCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int")
-                        .HasColumnName("CategoryId");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Name");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("SubCategories", (string)null);
+                    b.HasIndex("CityId");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 1,
-                            Name = "Phone"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 1,
-                            Name = "Computer & Tablet"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CategoryId = 2,
-                            Name = "Clothes"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CategoryId = 2,
-                            Name = "Shoes"
-                        });
+                    b.ToTable("Towns");
                 });
 
             modelBuilder.Entity("ShoppingListApp.Models.User", b =>
@@ -554,22 +477,61 @@ namespace ShoppingListApp.Migrations
 
             modelBuilder.Entity("ShoppingListApp.Models.Address", b =>
                 {
+                    b.HasOne("ShoppingListApp.Models.City", "City")
+                        .WithMany("Addresses")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShoppingListApp.Models.Country", "Country")
+                        .WithMany("Addresses")
+                        .HasForeignKey("CountryId")
+                        .IsRequired();
+
+                    b.HasOne("ShoppingListApp.Models.District", "District")
+                        .WithMany("Addresses")
+                        .HasForeignKey("DistrictId")
+                        .IsRequired();
+
+                    b.HasOne("ShoppingListApp.Models.Town", null)
+                        .WithMany("Addresses")
+                        .HasForeignKey("TownId");
+
                     b.HasOne("ShoppingListApp.Models.User", "User")
                         .WithMany("Addresses")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
+
+                    b.Navigation("Country");
+
+                    b.Navigation("District");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("ShoppingListApp.Models.CategoryDetail", b =>
+            modelBuilder.Entity("ShoppingListApp.Models.City", b =>
                 {
-                    b.HasOne("ShoppingListApp.Models.Category", "Category")
-                        .WithMany("CategoryDetail")
-                        .HasForeignKey("CategoryId")
+                    b.HasOne("ShoppingListApp.Models.Country", "Country")
+                        .WithMany("Cities")
+                        .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("Country");
+                });
+
+            modelBuilder.Entity("ShoppingListApp.Models.District", b =>
+                {
+                    b.HasOne("ShoppingListApp.Models.Town", "Town")
+                        .WithMany("Districts")
+                        .HasForeignKey("TownId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Town");
                 });
 
             modelBuilder.Entity("ShoppingListApp.Models.FavoriteItemUser", b =>
@@ -644,6 +606,25 @@ namespace ShoppingListApp.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("ShoppingListApp.Models.ItemCategory", b =>
+                {
+                    b.HasOne("ShoppingListApp.Models.Category", "Category")
+                        .WithMany("ItemCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShoppingListApp.Models.Item", "Item")
+                        .WithMany("ItemCategories")
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Item");
+                });
+
             modelBuilder.Entity("ShoppingListApp.Models.Order", b =>
                 {
                     b.HasOne("ShoppingListApp.Models.Address", "Address")
@@ -699,6 +680,17 @@ namespace ShoppingListApp.Migrations
                     b.Navigation("PaymentType");
                 });
 
+            modelBuilder.Entity("ShoppingListApp.Models.Town", b =>
+                {
+                    b.HasOne("ShoppingListApp.Models.City", "City")
+                        .WithMany("Towns")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
+                });
+
             modelBuilder.Entity("ShoppingListApp.Models.Address", b =>
                 {
                     b.Navigation("Invoices");
@@ -708,7 +700,26 @@ namespace ShoppingListApp.Migrations
 
             modelBuilder.Entity("ShoppingListApp.Models.Category", b =>
                 {
-                    b.Navigation("CategoryDetail");
+                    b.Navigation("ItemCategories");
+                });
+
+            modelBuilder.Entity("ShoppingListApp.Models.City", b =>
+                {
+                    b.Navigation("Addresses");
+
+                    b.Navigation("Towns");
+                });
+
+            modelBuilder.Entity("ShoppingListApp.Models.Country", b =>
+                {
+                    b.Navigation("Addresses");
+
+                    b.Navigation("Cities");
+                });
+
+            modelBuilder.Entity("ShoppingListApp.Models.District", b =>
+                {
+                    b.Navigation("Addresses");
                 });
 
             modelBuilder.Entity("ShoppingListApp.Models.Invoice", b =>
@@ -721,6 +732,8 @@ namespace ShoppingListApp.Migrations
                     b.Navigation("FavoriteItemUsers");
 
                     b.Navigation("InvoiceDetails");
+
+                    b.Navigation("ItemCategories");
 
                     b.Navigation("OrderDetails");
                 });
@@ -742,6 +755,13 @@ namespace ShoppingListApp.Migrations
             modelBuilder.Entity("ShoppingListApp.Models.PaymentType", b =>
                 {
                     b.Navigation("Payments");
+                });
+
+            modelBuilder.Entity("ShoppingListApp.Models.Town", b =>
+                {
+                    b.Navigation("Addresses");
+
+                    b.Navigation("Districts");
                 });
 
             modelBuilder.Entity("ShoppingListApp.Models.User", b =>

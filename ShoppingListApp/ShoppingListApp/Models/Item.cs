@@ -16,7 +16,7 @@
 
         public int FavoriteCount { get; set; }
 
-
+        public List<ItemCategory> ItemCategories { get; set; }
 
         public List<FavoriteItemUser> FavoriteItemUsers { get; set; }
 

@@ -9,14 +9,6 @@ namespace ShoppingListApp.Mapping
         public ViewModelMapping()
         {
             CreateMap<User, UserViewModel>().ReverseMap();
-
-            CreateMap<Address, AddressViewModel>().ReverseMap();
-
-            CreateMap<Category, CategoryViewModel>().ReverseMap();
-
-            CreateMap<SubCategory, SubCategoryViewModel>().ReverseMap();
-
-            CreateMap<ItemDetail, ItemDetailViewModel>().ReverseMap();
         }
     }
 }

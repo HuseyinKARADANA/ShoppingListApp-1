@@ -25,6 +25,7 @@ namespace ShoppingListApp.ViewModels
 
         public DateTime RegisterDate { get; set; }
 
+        
         public int PhoneNumber { get; set; }
 
         public List<Address> Addresses { get; set; }

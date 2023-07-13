@@ -6,27 +6,29 @@ namespace ShoppingListApp.Models
     {
         public int Id { get; set; }
 
-        public int? UserId { get; set; }
+        public int UserId { get; set; }
 
-        public User? User { get; set; }
+        public User User { get; set; }
 
-        public string AddressName { get; set; }
+        public int CountryId { get; set; }
 
-        public string CountryName { get; set; }
+        public Country Country { get; set; }
 
-        public string CityName { get; set; }
+        public int CityId { get; set; }
 
-        public string TownName { get; set; }
+        public City City { get; set; }
 
-        public string DistrictName { get; set; }
+        public int DistrictId { get; set; }
+
+        public District District { get; set; }
 
         public int PostCode { get; set; }
 
         public string AddressText { get; set; }
 
-        public List<Order>? Orders { get; set; }
+        public List<Order> Orders { get; set; }
 
-        public List<Invoice>? Invoices { get; set; }
+        public List<Invoice> Invoices { get; set; }
     }
 }
 
